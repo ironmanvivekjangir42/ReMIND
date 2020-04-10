@@ -9,4 +9,11 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="recent">Recent</string>
+    <string name="ReMIND">ReMIND</string>
+    <string name="enter_your_mobile_number">Enter your mobile number</string>
+    <string name="verify">Verify</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="skip"><![CDATA[Skip >>]]></string>
+    <string name="favorites">Favorites</string>
+    <string name="save">save</string>
 </resources>

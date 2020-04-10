@@ -6,11 +6,11 @@ import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Switch;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                     selectedfragment = new HomeFragment();
                     break;
                 case R.id.search:
-                    selectedfragment = new SearchFragment();
+                    selectedfragment = new FavoritesFragment();
                     break;
                 case R.id.recent:
                     selectedfragment = new RecentFragment();
