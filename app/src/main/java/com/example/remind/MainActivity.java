@@ -4,13 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity {
 
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,13 +24,12 @@ public class MainActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction().replace(R.id.frame_container,
                     new HomeFragment()).commit();
         }
-
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navlistner  = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            Fragment selectedfragment = null;
+            Fragment selectedfragment =null;
 
             switch (item.getItemId()){
                 case R.id.home:
@@ -39,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.search:
                     selectedfragment = new FavoritesFragment();
                     break;
-                case R.id.recent:
-                    selectedfragment = new RecentFragment();
+                case R.id.profile:
+                    selectedfragment = new ProfileFragment();
                     break;
             }
             getSupportFragmentManager().beginTransaction().replace(R.id.frame_container,
@@ -48,4 +47,11 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
     };
+
+    public void onBackPressed(){
+        Intent a = new Intent(Intent.ACTION_MAIN);
+        a.addCategory(Intent.CATEGORY_HOME);
+        a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(a);
+    }
 }

@@ -49,14 +49,11 @@ public class OTP extends AppCompatActivity {
             intent.putExtra("phone",number);
             startActivity(intent);
         }
-
         ccp = (CountryCodePicker) findViewById(R.id.ccp);
-
 
         verify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 String phone = phonenumber.getText().toString().trim();
                 ccp.registerCarrierNumberEditText(phonenumber);
                 number = ccp.getFullNumberWithPlus();
@@ -154,5 +151,12 @@ public class OTP extends AppCompatActivity {
                     }
                 }
         );
+    }
+    public void onBackPressed(){
+        Intent a = new Intent(Intent.ACTION_MAIN);
+        a.addCategory(Intent.CATEGORY_HOME);
+        a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(a);
+
     }
 }
