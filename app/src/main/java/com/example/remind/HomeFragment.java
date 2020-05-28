@@ -149,7 +149,7 @@ public class HomeFragment extends Fragment {
                         d.item=inputItem.getText().toString().toLowerCase();
                         d.location=inputLocation.getText().toString().toLowerCase();
                         dataArrayList.set(position,d);
-                        mAdapter.notifyItemInserted(position);
+                        mAdapter.notifyItemChanged(position);
                     }
                 });
                 alertDialog.show();
